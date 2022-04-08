@@ -1,0 +1,341 @@
+@font-face {
+  font-family: 'Womby';
+  src: url('~@/assets/fonts/Womby-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: url('~@/assets/fonts/Geometria-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: url('~@/assets/fonts/Geometria-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+body {
+  font-family: 'Womby', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0 auto;
+  height: 100%;
+  background: $background-light-gray;
+
+  width: 100%;
+
+  button,
+  p,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: 'Womby', sans-serif;
+    color: $color-white;
+  }
+
+  @media (max-width: $mobiles-max) {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    overflow-x: hidden;
+  }
+
+  overflow-y: scroll;
+
+  scrollbar-width: thin;
+  scrollbar-color: $color-white $color-black;
+
+  /* для Chrome/Edge/Safari */
+  &::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $color-black;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 180px;
+    background-color: $color-white;
+    border-radius: 0;
+    border: 1px solid $color-black;
+  }
+
+  @media (max-width: $tablets-max) {
+    overflow-y: initial;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+h1 {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 66px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: $color-white;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: $mobiles-max) {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}
+
+h2 {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 66px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  margin: 0;
+  padding: 0;
+  color: $color-white;
+
+  @media (max-width: $mobiles-max) {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+
+  @media (max-width: 350px) {
+    font-size: 18px;
+  }
+}
+
+h3 {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 55px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  margin: 0;
+
+  @media (max-width: $mobiles-max) {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+h4 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  margin: 0;
+
+  @media (max-width: $mobiles-max) {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+h5 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h6 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 15px 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input,
+textarea {
+  color: $color-black !important;
+  opacity: 1 !important;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container {
+  width: 100%;
+  max-width: $container;
+  margin: 0 auto;
+  transition: $transition-settings;
+
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @media (max-width: $tablets-max) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  @media (max-width: $mobiles-max) {
+    padding-right: 0px;
+    padding-left: 20px;
+  }
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// Placeholder
+
+.notification-content {
+  font-size: 1rem;
+
+  a {
+    color: $color-white !important;
+    text-decoration: underline;
+  }
+}
+
+.vue-notification {
+  padding: 12px !important;
+  color: $color-white !important;
+  border-left: none !important;
+  margin: 0 !important;
+  padding-left: 22px !important;
+}
+
+.vue-notification.error {
+  background: $color-black !important;
+  border-left-color: $color-white !important;
+  color: $color-white !important;
+}
+
+.vue-notification.success {
+  background: $color-black !important;
+  border-left-color: $color-white !important;
+}
+
+.overlay {
+  filter: blur(4px);
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+#__app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#overlay-circular {
+  position: absolute;
+}
+.loader-circular {
+  background-image: url('..//img/beer-svgrepo-com.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  width: 120px;
+  height: 120px;
+  border-top: none;
+  &:before {
+    display: none;
+  }
+
+  &:after {
+    display: none;
+  }
+}

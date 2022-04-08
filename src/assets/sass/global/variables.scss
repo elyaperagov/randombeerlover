@@ -1,0 +1,80 @@
+/* general */
+$mobiles: 500px;
+$mobiles-max: 767px;
+$tablets: 768px;
+$tablets-sm: 950px;
+$tablets-md: 1024px;
+$tablets-max: 1199px;
+$desktops: 1200px;
+$desktops-sm: 1500px;
+$desktops-md: 1720px;
+$desktops-lg: 1800px;
+$desktops-xl: 2300px;
+// $container: 1760px;
+$container: 1410px;
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+$transition-settings: 0.3s all;
+
+$color-black: #000;
+$color-white: #fff;
+
+$color-placeholder: #d8d8d8;
+
+@mixin font-color($opacity: 0.7) {
+  background-image: linear-gradient(180deg,
+      rgba(206, 206, 206, $opacity) 0%,
+      rgba(105, 105, 105, $opacity) 100%),
+    linear-gradient(0deg, #ffffff, #ffffff);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-color: #000;
+}
+
+@mixin font-color-light() {
+  background-image: linear-gradient(180deg,
+      #FFFFFF 0%,
+      #878787 100%),
+    linear-gradient(0deg, #ffffff, #ffffff);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/*general*/
+$mobiles: 320px;
+$mobiles-max: 767px;
+$tablets: 768px;
+$tablets-max: 1023px;
+$desktops: 1024px;
+$container: 1590px;
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+
+$font-base-color: #262626;
+
+$transition-settings: 0.3s all;
+
+// Default
+
+$color-default-black: #000000;
+$color-default-white: #ffffff;
+$color-transparent: rgba(0, 0, 0, 0);
+
+// Base
+
+$color-black: #262626;
+$color-dark-gray: #464646;
+$color-gray: #4D4D4D;
+$background-light-gray: #F5F7F9;
+$color-white: #FFFFFF;
+$color-blue: #2A4876;
+$color-red: #EB4431;
+$color-red-form: #E05F50;
+$color-light-gray: #F2F2F2;
+$color-background-gray: #E5E5E5;
+$color-background-gray-light: #F1F1F1;
+$color-placeholder: rgba(38, 38, 38, 0.5);
+$color-error: #D52020;
+$button-gradient: linear-gradient(264.57deg, #E05F50 -3.04%, rgba(224, 95, 80, 0.8) 93.7%);

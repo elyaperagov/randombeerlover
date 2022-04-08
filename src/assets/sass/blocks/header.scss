@@ -1,0 +1,44 @@
+.header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.01);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  background-color: $color-black;
+
+  @media (max-width: $mobiles-max) {
+    border: none;
+  }
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: 15px 0;
+
+  min-height: 70px;
+
+  @media (max-width: $tablets-max) {
+  }
+
+  @media (max-width: $mobiles-max) {
+    padding: 15px 0;
+    min-height: 40px;
+  }
+}
+
+.header__logo {
+  svg {
+    @media (max-width: $mobiles-max) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.header__title {
+  color: $color-white;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
