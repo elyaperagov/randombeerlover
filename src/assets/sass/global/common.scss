@@ -254,7 +254,7 @@ table {
   }
 
   @media (max-width: $mobiles-max) {
-    padding-right: 0px;
+    padding-right: 20px;
     padding-left: 20px;
   }
 }
@@ -304,7 +304,7 @@ table {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
+  // position: relative;
 }
 
 #__app {
