@@ -191,7 +191,6 @@ export default {
           console.log(error)
           return error.response
         })
-      console.log(responseUser.data)
       if (responseUser.data) {
         this.user = responseUser.data
         this.employment = this.user.employment.title
