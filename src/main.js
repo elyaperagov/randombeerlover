@@ -7,6 +7,8 @@ import VueMeta from 'vue-meta'
 import SlideUpDown from 'vue-slide-up-down'
 import Bowser from 'bowser'
 import loader from "vue-ui-preloader";
+import VueLazyload from 'vue-lazyload'
+
 
 import './assets/sass/app.scss'
 
@@ -18,6 +20,12 @@ Vue.use(Helpers)
 Vue.use(Notifications)
 Vue.use(VueMeta, {
   refreshOnceOnNavigation: true
+})
+
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: require('@/assets/img/user.png'),
+  attempt: 1
 })
 Vue.config.productionTip = false
 

@@ -4,27 +4,27 @@
       <section class="info__inner">
         <div class="info__column">
           <div class="info__photo">
-            <img :src="avatar" alt="user photo" />
+            <img v-lazy="avatar" alt="user photo" />
           </div>
         </div>
         <div class="info__body">
           <div class="info__block">
             <p class="info__block-title">{{ user_labels.title }}</p>
             <div class="info__field">
-              <span class="form__label">{{ user_labels.surname }}</span>
-              <span class="form__input">{{ user.last_name }}</span>
+              <span class="info__label">{{ user_labels.surname }}</span>
+              <span class="info__cell">{{ user.last_name }}</span>
             </div>
             <div class="info__field">
-              <span class="form__label">{{ user_labels.name }}</span>
-              <span class="form__input">{{ user.first_name }}</span>
+              <span class="info__label">{{ user_labels.name }}</span>
+              <span class="info__cell">{{ user.first_name }}</span>
             </div>
             <div class="info__field">
-              <span class="form__label">{{ user_labels.occupation }}</span>
-              <span class="form__input">{{ employment }}</span>
+              <span class="info__label">{{ user_labels.occupation }}</span>
+              <span class="info__cell">{{ employment }}</span>
             </div>
             <div class="info__field">
-              <span class="form__label">{{ user_labels.age }}</span>
-              <span class="form__input">{{ user.age }}</span>
+              <span class="info__label">{{ user_labels.age }}</span>
+              <span class="info__cell">{{ user.age }}</span>
             </div>
           </div>
 
@@ -42,43 +42,44 @@
             </p>
             <slide-up-down :active="showOptions" v-bind:class="{ show: show }">
               <div class="info__field">
-                <span class="form__label" v-html="beer_labels.name"></span>
-                <span class="form__input" v-html="beer.name"></span>
+                <span class="info__label" v-html="beer_labels.name"></span>
+                <span class="info__cell" v-html="beer.name"></span>
               </div>
               <div class="info__field">
-                <span class="form__label" v-html="beer_labels.style"></span>
-                <span class="form__input" v-html="beer.style"></span>
+                <span class="info__label" v-html="beer_labels.style"></span>
+                <span class="info__cell" v-html="beer.style"></span>
               </div>
               <div class="info__field">
-                <span class="form__label" v-html="beer_labels.brand"></span>
-                <span class="form__input" v-html="beer.brand"></span>
+                <span class="info__label" v-html="beer_labels.brand"></span>
+                <span class="info__cell" v-html="beer.brand"></span>
               </div>
               <div class="info__field">
-                <span class="form__label" v-html="beer_labels.hop"></span>
-                <span class="form__input" v-html="beer.hop"></span>
+                <span class="info__label" v-html="beer_labels.hop"></span>
+                <span class="info__cell" v-html="beer.hop"></span>
               </div>
               <div class="info__field">
-                <span class="form__label" v-html="beer_labels.alcohol"></span>
-                <span class="form__input" v-html="beer.alcohol"></span>
+                <span class="info__label" v-html="beer_labels.alcohol"></span>
+                <span class="info__cell" v-html="beer.alcohol"></span>
               </div>
               <div class="info__field">
-                <span class="form__label" v-html="beer_labels.blg"></span>
-                <span class="form__input" v-html="beer.blg"></span>
+                <span class="info__label" v-html="beer_labels.blg"></span>
+                <span class="info__cell" v-html="beer.blg"></span>
               </div>
               <div class="info__field">
-                <span class="form__label" v-html="beer_labels.ibu"></span>
-                <span class="form__input" v-html="beer.ibu"></span>
+                <span class="info__label" v-html="beer_labels.ibu"></span>
+                <span class="info__cell" v-html="beer.ibu"></span>
               </div>
               <div class="info__field">
-                <span class="form__label" v-html="beer_labels.malts"></span>
-                <span class="form__input" v-html="beer.malts"></span>
+                <span class="info__label" v-html="beer_labels.malts"></span>
+                <span class="info__cell" v-html="beer.malts"></span>
               </div>
               <div class="info__field">
-                <span class="form__label" v-html="beer_labels.yeast"></span>
-                <span class="form__input" v-html="beer.yeast"></span>
+                <span class="info__label" v-html="beer_labels.yeast"></span>
+                <span class="info__cell" v-html="beer.yeast"></span>
               </div>
             </slide-up-down>
           </div>
+          <button class="info__reload" @click="getNewData()">{{ newUser }}</button>
         </div>
       </section>
       <template v-if="preloader">
@@ -114,6 +115,7 @@ export default {
       preloader: false,
       employment: '',
       avatar: '',
+      newUser: 'Get new user',
       user_labels: {
         age: 'Age:',
         surname: 'Lastname:',
@@ -155,6 +157,9 @@ export default {
     },
     async getData() {
       this.preloader = true
+      if (this.preloader === true) {
+        this.avatar = ''
+      }
       await this.getBeer()
       await this.getUser()
       setTimeout(() => {
@@ -163,6 +168,9 @@ export default {
     },
     toggleBlock() {
       this.showOptions = !this.showOptions
+    },
+    getNewData() {
+      this.getData()
     },
     async getBeer() {
       const responseBeer = await axios
@@ -187,9 +195,9 @@ export default {
       if (responseUser.data) {
         this.user = responseUser.data
         this.employment = this.user.employment.title
-        this.avatar = this.user.avatar.split('?')
-        this.avatar.pop()
-        this.avatar.join('')
+
+        this.avatar = this.user.avatar
+
         this.user.age = this.getAge(this.user.date_of_birth)
       }
     }

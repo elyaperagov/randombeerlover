@@ -21,27 +21,6 @@ $color-white: #fff;
 
 $color-placeholder: #d8d8d8;
 
-@mixin font-color($opacity: 0.7) {
-  background-image: linear-gradient(180deg,
-      rgba(206, 206, 206, $opacity) 0%,
-      rgba(105, 105, 105, $opacity) 100%),
-    linear-gradient(0deg, #ffffff, #ffffff);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-color: #000;
-}
-
-@mixin font-color-light() {
-  background-image: linear-gradient(180deg,
-      #FFFFFF 0%,
-      #878787 100%),
-    linear-gradient(0deg, #ffffff, #ffffff);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
 /*general*/
 $mobiles: 320px;
 $mobiles-max: 767px;
@@ -66,15 +45,16 @@ $color-transparent: rgba(0, 0, 0, 0);
 
 $color-black: #262626;
 $color-dark-gray: #464646;
-$color-gray: #4D4D4D;
-$background-light-gray: #F5F7F9;
-$color-white: #FFFFFF;
-$color-blue: #2A4876;
-$color-red: #EB4431;
-$color-red-form: #E05F50;
-$color-light-gray: #F2F2F2;
-$color-background-gray: #E5E5E5;
-$color-background-gray-light: #F1F1F1;
+$color-gray: #4d4d4d;
+$background-light-gray: #f5f7f9;
+$color-white: #ffffff;
+$color-blue: #2a4876;
+$color-red: #eb4431;
+$color-beige: blanchedalmond;
+$color-red-form: #e05f50;
+$color-light-gray: #f2f2f2;
+$color-background-gray: #e5e5e5;
+$color-background-gray-light: #f1f1f1;
 $color-placeholder: rgba(38, 38, 38, 0.5);
-$color-error: #D52020;
-$button-gradient: linear-gradient(264.57deg, #E05F50 -3.04%, rgba(224, 95, 80, 0.8) 93.7%);
+$color-error: #d52020;
+$button-gradient: linear-gradient(264.57deg, #e05f50 -3.04%, rgba(224, 95, 80, 0.8) 93.7%);

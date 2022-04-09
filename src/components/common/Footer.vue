@@ -7,7 +7,7 @@
             <use xlink:href="#beer"></use>
           </svg>
         </router-link>
-        <h1 class="footer__title" v-html="title"></h1>
+        <h2 class="footer__title" v-html="title"></h2>
       </div>
       <span class="footer__copyright" v-html="copyright"></span>
     </div>

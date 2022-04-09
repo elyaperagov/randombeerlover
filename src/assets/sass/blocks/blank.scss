@@ -16,6 +16,9 @@
   border: 2px solid $color-black;
   transition: $transition-settings;
 
+  text-align: center;
+  position: relative;
+
   @media (max-width: $tablets-max) {
     width: 300px;
     height: 300px;
@@ -63,7 +66,7 @@
   }
 }
 
-.form__label {
+.info__label {
   position: static;
   font-size: 16px;
   line-height: 108%;
@@ -73,11 +76,11 @@
   opacity: 1;
   @media (max-width: $mobiles-max) {
     margin-bottom: 9px;
-    font-size: 20px;
+    font-size: 14px;
   }
 }
 
-.form__input {
+.info__cell {
   background: transparent;
   border: none;
   border-bottom: 3px solid $color-gray;
@@ -116,7 +119,7 @@
 
 .info__block {
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding: 10px 15px;
 
   &:nth-child(even) {
@@ -162,5 +165,49 @@
 
   &--rotated {
     transform: rotate(180deg);
+  }
+}
+
+.info__reload {
+  cursor: pointer;
+
+  display: block;
+  margin-left: auto;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+
+  outline: none !important;
+  border: none;
+  transition: $transition-settings;
+  flex-shrink: 0;
+  background: none;
+
+  background-color: $color-beige;
+  border-radius: 10px;
+
+  width: 350px;
+  margin-top: 30px;
+  padding: 10px 15px;
+
+  letter-spacing: 0.055em;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 66px;
+
+  position: relative;
+  transition: $transition-settings;
+  color: $color-black;
+
+  @media (max-width: $tablets-max) {
+    font-size: 30px;
+    width: 100%;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-dark-gray;
+    color: $color-default-white;
   }
 }

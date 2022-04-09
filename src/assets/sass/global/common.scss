@@ -103,7 +103,8 @@ button {
   }
 }
 
-h1 {
+h1,
+h2 {
   font-size: 48px;
   font-style: normal;
   font-weight: 600;
@@ -121,32 +122,6 @@ h1 {
     line-height: 33px;
     letter-spacing: 0em;
     text-align: center;
-  }
-}
-
-h2 {
-  font-size: 44px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 66px;
-  letter-spacing: 0em;
-  text-align: left;
-
-  margin: 0;
-  padding: 0;
-  color: $color-white;
-
-  @media (max-width: $mobiles-max) {
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 36px;
-    letter-spacing: 0em;
-    text-align: center;
-  }
-
-  @media (max-width: 350px) {
-    font-size: 18px;
   }
 }
 
@@ -322,6 +297,8 @@ table {
 
 #overlay-circular {
   position: absolute;
+  background-color: rgba(255, 255, 255, 0) !important;
+  backdrop-filter: blur(8px);
 }
 .loader-circular {
   background-image: url('..//img/beer-svgrepo-com.svg');
