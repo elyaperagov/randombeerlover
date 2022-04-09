@@ -103,7 +103,7 @@
 import axios from 'axios'
 
 export default {
-  name: 'Blank',
+  name: 'Info',
   data() {
     return {
       active: true,

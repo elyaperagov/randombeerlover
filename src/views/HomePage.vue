@@ -2,7 +2,7 @@
   <div class="wrapper">
     <Header />
     <main class="main">
-      <Blank />
+      <Info />
     </main>
     <Footer />
   </div>
@@ -11,13 +11,13 @@
 <script>
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
-import Blank from '@/components/home/Blank'
+import Info from '@/components/home/Info'
 
 export default {
   name: 'HomePage',
   components: {
     Header,
-    Blank,
+    Info,
     Footer
   },
   props: {},
